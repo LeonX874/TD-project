@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c8v383m77u4a8"]
+
+[ext_resource type="Script" uid="uid://8yklge5vycpw" path="res://h_slider.gd" id="1_8agav"]
+[ext_resource type="Texture2D" uid="uid://ggpy1sw8bmw6" path="res://Asset/Pixel_blue_circle.png" id="2_mn316"]
+[ext_resource type="AudioStream" uid="uid://brbi2s3ye5bdj" path="res://Audio/Background Audio/MenuSong.mp3" id="2_nfytv"]
+
+[node name="Setting" type="Control" unique_id=1965402047]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8agav")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=296985768]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1055403030]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1095280441]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Volume"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1156705424]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Volume"
+
+[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=2005770438]
+custom_minimum_size = Vector2(250, 30)
+custom_maximum_size = Vector2(1000, 200)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("2_mn316")
+theme_override_icons/grabber_highlight = ExtResource("2_mn316")
+theme_override_icons/grabber_disabled = ExtResource("2_mn316")
+max_value = 20.0
+step = 0.001
+
+[node name="MenuSong" type="AudioStreamPlayer" parent="." unique_id=1105542736]
+stream = ExtResource("2_nfytv")
+autoplay = true
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
