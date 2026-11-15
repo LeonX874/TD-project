@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://ba413ylq8r72r"]
 
 [ext_resource type="PackedScene" uid="uid://dedc4s5gs6k8v" path="res://Tiles/TileMap.tscn" id="1_g16pf"]
+[ext_resource type="Script" uid="uid://dws0xdiag52sn" path="res://game_over.gd" id="1_icnsq"]
 [ext_resource type="Texture2D" uid="uid://b1dd3ayeeyuwl" path="res://Asset/panel_brown_damaged.png" id="2_t11an"]
 [ext_resource type="FontFile" uid="uid://66atroba71qc" path="res://Font/Daydream DEMO.otf" id="3_6cjrk"]
 [ext_resource type="Texture2D" uid="uid://cmt8xct4v3kp5" path="res://Menu Button/Menu_Button-removebg-preview(4).png" id="4_6cjrk"]
 [ext_resource type="Script" uid="uid://d1iaf3o2edmq3" path="res://restart.gd" id="4_g7td7"]
 [ext_resource type="Script" uid="uid://tfe75r5cgnlq" path="res://back.gd" id="5_icnsq"]
 [ext_resource type="Texture2D" uid="uid://bejgqlp1s2ch" path="res://Menu Button/Menu_Button-removebg-preview(2).png" id="6_g7td7"]
+[ext_resource type="AudioStream" uid="uid://brbi2s3ye5bdj" path="res://Audio/Background Audio/MenuSong.mp3" id="9_nrthg"]
 
 [node name="GameOT" type="Node2D" unique_id=75436128]
+script = ExtResource("1_icnsq")
 
 [node name="TileMap" parent="." unique_id=1950906160 instance=ExtResource("1_g16pf")]
 rendering_quadrant_size = 64
@@ -124,6 +127,10 @@ theme_override_fonts/font = ExtResource("3_6cjrk")
 theme_override_font_sizes/font_size = 143
 text = "Back "
 horizontal_alignment = 1
+
+[node name="bg" type="AudioStreamPlayer" parent="." unique_id=590430186]
+stream = ExtResource("9_nrthg")
+volume_db = -7.135
 
 [connection signal="pressed" from="restart" to="restart" method="_on_pressed"]
 [connection signal="pressed" from="back" to="restart" method="_on_back_pressed"]

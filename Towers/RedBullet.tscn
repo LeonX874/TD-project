@@ -111,47 +111,47 @@ func _process(delta):
 		self.value = get_node(\"Timer\").time_left
 "
 
-[node name="RedBulletTower" type="StaticBody2D" unique_id=1309513489]
+[node name="RedBulletTower" type="StaticBody2D" unique_id=1610419808]
 collision_layer = 2
 collision_mask = 2
 input_pickable = true
 script = ExtResource("1_80d8d")
 
-[node name="Aim" type="Marker2D" parent="." unique_id=1842458533]
+[node name="Aim" type="Marker2D" parent="." unique_id=862503184]
 position = Vector2(54, -4)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1049905282]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2115132382]
 position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_1fspn")
 
-[node name="TowerDefenseTile250" type="Sprite2D" parent="." unique_id=210387191]
+[node name="TowerDefenseTile250" type="Sprite2D" parent="." unique_id=1410315372]
 rotation = 1.5708
 scale = Vector2(2, 2)
 texture = ExtResource("1_s1hbh")
 metadata/_edit_lock_ = true
 
-[node name="Tower" type="Area2D" parent="." unique_id=715452554]
+[node name="Tower" type="Area2D" parent="." unique_id=1041424116]
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower" unique_id=172094953]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower" unique_id=2041063892]
 modulate = Color(0, 1, 0.0666667, 0.298039)
 shape = SubResource("CircleShape2D_id8qf")
 script = SubResource("GDScript_5tlqh")
 metadata/_edit_lock_ = true
 
-[node name="TowerDetector" type="Area2D" parent="." unique_id=1329678833]
+[node name="TowerDetector" type="Area2D" parent="." unique_id=828948654]
 collision_layer = 7
 collision_mask = 7
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerDetector" unique_id=895090776]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerDetector" unique_id=2020960439]
 position = Vector2(-5.5, 0.5)
 shape = SubResource("RectangleShape2D_fyn7l")
 metadata/_edit_lock_ = true
 
-[node name="BulletContainer" type="Node" parent="." unique_id=217785364]
+[node name="BulletContainer" type="Node" parent="." unique_id=156084970]
 
-[node name="Area" type="Panel" parent="." unique_id=1552332422]
+[node name="Area" type="Panel" parent="." unique_id=351916465]
 modulate = Color(0, 1, 0, 0.309804)
 offset_left = -400.0
 offset_top = -400.0
@@ -159,9 +159,9 @@ offset_right = 400.0
 offset_bottom = 400.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5010x")
 
-[node name="Upgrade" type="Node" parent="." unique_id=1477772129]
+[node name="Upgrade" type="Node" parent="." unique_id=625370654]
 
-[node name="Upgrade" type="Panel" parent="Upgrade" unique_id=1160443330]
+[node name="Upgrade" type="Panel" parent="Upgrade" unique_id=488412271]
 visible = false
 offset_left = -572.0
 offset_top = 81.0
@@ -170,7 +170,7 @@ offset_bottom = 273.0
 scale = Vector2(2, 2)
 theme_override_styles/panel = SubResource("StyleBoxFlat_iyr3l")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Upgrade/Upgrade" unique_id=1250452476]
+[node name="HBoxContainer" type="HBoxContainer" parent="Upgrade/Upgrade" unique_id=2105148832]
 layout_mode = 0
 offset_left = 43.0
 offset_top = 33.0
@@ -178,7 +178,7 @@ offset_right = 523.0
 offset_bottom = 153.0
 theme_override_constants/separation = 60
 
-[node name="Range" type="Button" parent="Upgrade/Upgrade/HBoxContainer" unique_id=299838891]
+[node name="Range" type="Button" parent="Upgrade/Upgrade/HBoxContainer" unique_id=269431386]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_op0du")
@@ -186,11 +186,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0ohgn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ds40w")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e6m87")
 
-[node name="TowerDefenseTile110" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/Range" unique_id=1932091752]
+[node name="TowerDefenseTile110" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/Range" unique_id=306166278]
 position = Vector2(63.119, 62.183)
 texture = ExtResource("3_dij3n")
 
-[node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Range" unique_id=1278850532]
+[node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Range" unique_id=1815668909]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 127.0
@@ -200,7 +200,7 @@ text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AttackSpeed" type="Button" parent="Upgrade/Upgrade/HBoxContainer" unique_id=301452594]
+[node name="AttackSpeed" type="Button" parent="Upgrade/Upgrade/HBoxContainer" unique_id=2083913354]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_op0du")
@@ -208,11 +208,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0ohgn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ds40w")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e6m87")
 
-[node name="TowerDefenseTile297" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/AttackSpeed" unique_id=778084550]
+[node name="TowerDefenseTile297" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/AttackSpeed" unique_id=1504037856]
 position = Vector2(63.119, 62.183)
 texture = ExtResource("4_72tkk")
 
-[node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/AttackSpeed" unique_id=2111907658]
+[node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/AttackSpeed" unique_id=1762785030]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 127.0
@@ -222,7 +222,7 @@ text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Power" type="Button" parent="Upgrade/Upgrade/HBoxContainer" unique_id=47597267]
+[node name="Power" type="Button" parent="Upgrade/Upgrade/HBoxContainer" unique_id=1151866712]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_op0du")
@@ -230,11 +230,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0ohgn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ds40w")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e6m87")
 
-[node name="TowerDefenseTile296" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/Power" unique_id=886234108]
+[node name="TowerDefenseTile296" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/Power" unique_id=660122253]
 position = Vector2(63.119, 62.183)
 texture = ExtResource("5_pjxk6")
 
-[node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Power" unique_id=944623552]
+[node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Power" unique_id=745706261]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 124.0
@@ -244,7 +244,7 @@ text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Upgrade" unique_id=81146732]
+[node name="ProgressBar" type="ProgressBar" parent="Upgrade" unique_id=1959537218]
 offset_left = -64.0
 offset_top = -81.0
 offset_right = 64.0
@@ -254,12 +254,11 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_5nmc3")
 show_percentage = false
 script = SubResource("GDScript_oratb")
 
-[node name="Timer" type="Timer" parent="Upgrade/ProgressBar" unique_id=1369171395]
+[node name="Timer" type="Timer" parent="Upgrade/ProgressBar" unique_id=927634517]
 wait_time = 3.0
 
-[node name="Shoot_sfx" type="AudioStreamPlayer" parent="." unique_id=2140602831]
+[node name="Shoot_sfx" type="AudioStreamPlayer" parent="." unique_id=1266163677]
 stream = ExtResource("6_36i80")
-volume_db = -14.313
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
