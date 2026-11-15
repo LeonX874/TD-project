@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dedc4s5gs6k8v" path="res://Tiles/TileMap.tscn" id="1_25n6f"]
 [ext_resource type="Script" uid="uid://bkr6oy66j5xi3" path="res://PathSpawner.gd" id="2_3vi2l"]
 [ext_resource type="PackedScene" uid="uid://ddoeholnt2lip" path="res://ui.tscn" id="4_4jwic"]
+[ext_resource type="Texture2D" uid="uid://bejgqlp1s2ch" path="res://Menu Button/Menu_Button-removebg-preview(2).png" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://dmr8q3y08833a" path="res://ext.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://b7cdwrp5k0gmx" path="res://rst.gd" id="7_272bh"]
 
 [sub_resource type="GDScript" id="GDScript_tiaqs"]
 script/source = "extends Node2D
@@ -17,6 +20,10 @@ func _ready():
 func _process(delta):
 	if Game.Health <= 0:
 		FadeTransition.change_scene(\"res://game_ot.tscn\")
+
+
+func _on_ext_pressed() -> void:
+	pass # Replace with function body.
 "
 
 [sub_resource type="GDScript" id="GDScript_bahdm"]
@@ -32,6 +39,9 @@ func _process(delta):
 		Towers.append(get_child(i))
 
 "
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_272bh"]
+load_path = "res://.godot/imported/Menu_Button-removebg-preview(4).png-032338b8b46165929c32bb456b8e1964.ctex"
 
 [node name="Main" type="Node2D" unique_id=825563098]
 script = SubResource("GDScript_tiaqs")
@@ -57,4 +67,33 @@ position = Vector2(1792, 1024)
 
 [node name="UI" parent="." unique_id=1482259458 instance=ExtResource("4_4jwic")]
 
+<<<<<<< Updated upstream
+=======
+[node name="game_sfx" type="AudioStreamPlayer2D" parent="." unique_id=1670984591]
+stream = ExtResource("4_1bvp3")
+volume_db = -16.0
+
+[node name="ext" type="Button" parent="." unique_id=1780814538]
+offset_left = 4.0
+offset_top = 1797.0
+offset_right = 128.0
+offset_bottom = 1921.0
+scale = Vector2(2, 2)
+icon = ExtResource("5_7mycd")
+flat = true
+script = ExtResource("6_272bh")
+
+[node name="rst" type="Button" parent="." unique_id=235855682]
+offset_left = 4.0
+offset_top = 1552.0
+offset_right = 127.0
+offset_bottom = 1676.0
+scale = Vector2(2, 2)
+icon = SubResource("CompressedTexture2D_272bh")
+flat = true
+script = ExtResource("7_272bh")
+
+>>>>>>> Stashed changes
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
+[connection signal="pressed" from="ext" to="ext" method="_on_pressed"]
+[connection signal="pressed" from="rst" to="rst" method="_on_pressed"]

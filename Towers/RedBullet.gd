@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+const UPGRADE_COST = 10
+
 var Bullet = preload("res://Towers/Bullet.tscn")
 var bulletDamage = 5
 var pathName
@@ -24,6 +26,8 @@ func _process(delta):
 		for i in get_node("BulletContainer").get_child_count():
 			get_node("BulletContainer").get_child(i).queue_free()
 	update_powers()
+
+
 func Shoot():
 	
 	var tempBullet = Bullet.instantiate()
@@ -31,8 +35,8 @@ func Shoot():
 	tempBullet.bulletDamage = bulletDamage
 	get_node("BulletContainer").add_child(tempBullet)
 	tempBullet.global_position = $Aim.global_position
-	
-	
+
+
 func _on_tower_body_entered(body):
 	if "Solider A" in body.name:
 		var tempArray = []
@@ -40,7 +44,7 @@ func _on_tower_body_entered(body):
 		for i in currTargets:
 			if "Solider" in i.name:
 				tempArray.append(i)
-			
+
 		var currTarget = null
 		for i in tempArray:
 			if currTarget == null:
@@ -48,9 +52,10 @@ func _on_tower_body_entered(body):
 			else:
 				if i.get_parent().get_progress() > currTarget.get_progress():
 					currTarget = i.get_node("../")
-				
+
 		curr = currTarget
 		pathName = currTarget.get_parent().name
+
 
 func _on_tower_body_exited(body):
 	currTargets = get_node("Tower").get_overlapping_bodies()
@@ -64,26 +69,35 @@ func _on_input_event(viewport, event, shape_idx):
 				towerPath.get_child(i).get_node("Upgrade/Upgrade").hide()
 		get_node("Upgrade/Upgrade").visible = !get_node("Upgrade/Upgrade").visible
 		get_node("Upgrade/Upgrade").global_position = self.position + Vector2(-572,81)
-		
+
+
+func can_afford() -> bool:
+	return Game.Gold >= UPGRADE_COST
+
 
 func _on_range_pressed():
+	if not can_afford():
+		return
+	Game.Gold -= UPGRADE_COST
 	range += 30
-	if Game.Gold >= 10:
-		Game.Gold -= 10
-		
+
+
 func _on_attack_speed_pressed():
+	if not can_afford():
+		return
 	if reload <= 2:
-		
+		Game.Gold -= UPGRADE_COST
 		reload += 0.1
-	timer.wait_time = 3 - reload
-	if Game.Gold >= 10:
-		Game.Gold -= 10
-		
+		timer.wait_time = 3 - reload
+
+
 func _on_power_pressed():
+	if not can_afford():
+		return
+	Game.Gold -= UPGRADE_COST
 	bulletDamage += 1
-	if Game.Gold >= 10:
-		Game.Gold -= 10
-		
+
+
 func _on_timer_timeout():
 	Shoot()
 
@@ -100,5 +114,10 @@ func update_powers():
 	get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text = str(range)
 	get_node("Upgrade/Upgrade/HBoxContainer/AttackSpeed/Label").text = str(3 - reload)
 	get_node("Upgrade/Upgrade/HBoxContainer/Power/Label").text = str(bulletDamage)
-	
+
 	get_node("Tower/CollisionShape2D").shape.radius = range
+
+	var broke = not can_afford()
+	get_node("Upgrade/Upgrade/HBoxContainer/Range").disabled = broke
+	get_node("Upgrade/Upgrade/HBoxContainer/AttackSpeed").disabled = broke
+	get_node("Upgrade/Upgrade/HBoxContainer/Power").disabled = broke

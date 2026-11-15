@@ -48,10 +48,17 @@ metadata/_edit_use_anchors_ = true
 [node name="Start" type="TextureButton" parent="Button Manager" unique_id=689551414]
 layout_mode = 1
 anchors_preset = -1
+<<<<<<< Updated upstream
 anchor_left = -5.7486386
 anchor_top = 2.0095277
 anchor_right = -6.223638
 anchor_bottom = 1.3595276
+=======
+anchor_left = -3.696951
+anchor_top = 1.7677155
+anchor_right = -4.1719513
+anchor_bottom = 1.1177155
+>>>>>>> Stashed changes
 offset_left = 344.0
 offset_top = 312.0
 offset_right = 483.0
@@ -64,10 +71,17 @@ metadata/_edit_use_anchors_ = true
 [node name="Options" type="TextureButton" parent="Button Manager" unique_id=882961502]
 layout_mode = 1
 anchors_preset = -1
+<<<<<<< Updated upstream
 anchor_left = -1.2288017
 anchor_top = 2.0145683
 anchor_right = -1.8788025
 anchor_bottom = 1.4645684
+=======
+anchor_left = -0.76838225
+anchor_top = 2.1112924
+anchor_right = -1.4183807
+anchor_bottom = 1.5612923
+>>>>>>> Stashed changes
 offset_left = 495.99997
 offset_top = 296.0
 offset_right = 642.0
@@ -80,10 +94,17 @@ metadata/_edit_use_anchors_ = true
 [node name="Quit" type="TextureButton" parent="Button Manager" unique_id=993139446]
 layout_mode = 1
 anchors_preset = -1
+<<<<<<< Updated upstream
 anchor_left = 3.4745514
 anchor_top = 2.0417702
 anchor_right = 2.8245513
 anchor_bottom = 1.1917694
+=======
+anchor_left = 2.0932984
+anchor_top = 1.84832
+anchor_right = 1.4432983
+anchor_bottom = 0.99832
+>>>>>>> Stashed changes
 offset_left = 672.0
 offset_top = 312.0
 offset_right = 818.0
