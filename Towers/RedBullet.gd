@@ -10,7 +10,9 @@ var curr
 
 var reload = 0
 var range = 400
+var rangePrice = 10
 
+@onready var shoot_sfx = $Shoot_sfx
 @onready var timer = get_node("Upgrade/ProgressBar/Timer")
 var startShooting = false
 
@@ -29,7 +31,7 @@ func _process(delta):
 
 
 func Shoot():
-	
+	shoot_sfx.play()
 	var tempBullet = Bullet.instantiate()
 	tempBullet.pathName = pathName
 	tempBullet.bulletDamage = bulletDamage
@@ -111,7 +113,7 @@ func _on_range_mouse_exited():
 
 
 func update_powers():
-	get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text = str(range)
+	get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text = str(rangePrice)
 	get_node("Upgrade/Upgrade/HBoxContainer/AttackSpeed/Label").text = str(3 - reload)
 	get_node("Upgrade/Upgrade/HBoxContainer/Power/Label").text = str(bulletDamage)
 
