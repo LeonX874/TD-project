@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://kw3jd11hj0w4"]
 
 [ext_resource type="Texture2D" uid="uid://dkwbq5hqkl77x" path="res://Asset/images.jpg" id="1_7r1g0"]
+[ext_resource type="Script" uid="uid://dh33q3kx3ba5s" path="res://MainMenu.gd" id="1_u7cqb"]
 [ext_resource type="Texture2D" uid="uid://ckc74ew7efjbm" path="res://Menu Button/Menu_Button-removebg-preview.png" id="2_cqjrg"]
 [ext_resource type="Script" uid="uid://de0r8mj1ie1x4" path="res://start.gd" id="3_e2xy7"]
 [ext_resource type="Script" uid="uid://sdhsgy3y2qbv" path="res://options.gd" id="4_fimr5"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cnhatmj6bou1l" path="res://Asset/banner_classic_curtain.png" id="6_afec1"]
 [ext_resource type="FontFile" uid="uid://66atroba71qc" path="res://Font/Daydream DEMO.otf" id="7_cqjrg"]
 [ext_resource type="AudioStream" uid="uid://brbi2s3ye5bdj" path="res://Audio/Background Audio/MenuSong.mp3" id="8_e2xy7"]
+[ext_resource type="AudioStream" uid="uid://bf4ly13f1devl" path="res://Audio/sfx/mouseclick1.ogg" id="10_afec1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vivr"]
 atlas = ExtResource("2_cqjrg")
@@ -30,6 +32,7 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Node2D" unique_id=798196083]
 scale = Vector2(3.095013, 3.1015763)
+script = ExtResource("1_u7cqb")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1841332145]
 offset_right = 623.41534
@@ -48,15 +51,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Start" type="TextureButton" parent="Button Manager" unique_id=689551414]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -5.7486386
-anchor_top = 2.0095277
-anchor_right = -6.223638
-anchor_bottom = 1.3595276
+anchor_left = -3.1072927
+anchor_top = 1.4211181
+anchor_right = -3.582292
+anchor_bottom = 0.77111816
 offset_left = 344.0
 offset_top = 312.0
 offset_right = 483.0
 offset_bottom = 459.0
-scale = Vector2(1.564241, 1.586778)
+scale = Vector2(1.564241, 1.6333052)
 texture_normal = SubResource("AtlasTexture_1vivr")
 script = ExtResource("3_e2xy7")
 metadata/_edit_use_anchors_ = true
@@ -64,15 +67,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Options" type="TextureButton" parent="Button Manager" unique_id=882961502]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -1.2288017
-anchor_top = 2.0145683
-anchor_right = -1.8788025
-anchor_bottom = 1.4645684
+anchor_left = -0.7037636
+anchor_top = 1.6276672
+anchor_right = -1.3537643
+anchor_bottom = 1.0776672
 offset_left = 495.99997
 offset_top = 296.0
 offset_right = 642.0
 offset_bottom = 438.0
-scale = Vector2(1.7038342, 1.6480855)
+scale = Vector2(1.6851065, 1.6246107)
 texture_normal = SubResource("AtlasTexture_gqm10")
 script = ExtResource("4_fimr5")
 metadata/_edit_use_anchors_ = true
@@ -80,15 +83,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Quit" type="TextureButton" parent="Button Manager" unique_id=993139446]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 3.4745514
-anchor_top = 2.0417702
-anchor_right = 2.8245513
-anchor_bottom = 1.1917694
+anchor_left = 1.6813462
+anchor_top = 1.5500839
+anchor_right = 1.0313461
+anchor_bottom = 0.7000839
 offset_left = 672.0
 offset_top = 312.0
 offset_right = 818.0
 offset_bottom = 466.0
-scale = Vector2(1.5702161, 1.6071359)
+scale = Vector2(1.6222614, 1.6695668)
 texture_normal = SubResource("AtlasTexture_rryik")
 script = ExtResource("5_u7cqb")
 metadata/_edit_use_anchors_ = true
@@ -119,6 +122,10 @@ vertical_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1347709028]
 stream = ExtResource("8_e2xy7")
 autoplay = true
+
+[node name="Click_sfx" type="AudioStreamPlayer" parent="." unique_id=950596544]
+stream = ExtResource("10_afec1")
+volume_db = -6.0
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="Start"]
 [connection signal="pressed" from="Button Manager/Start" to="Button Manager/Start" method="_on_pressed"]

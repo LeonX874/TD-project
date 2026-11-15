@@ -9,6 +9,7 @@ var curr
 var reload = 0
 var range = 400
 
+@onready var shoot_sfx = $Shoot_sfx
 @onready var timer = get_node("Upgrade/ProgressBar/Timer")
 var startShooting = false
 
@@ -25,7 +26,7 @@ func _process(delta):
 			get_node("BulletContainer").get_child(i).queue_free()
 	update_powers()
 func Shoot():
-	
+	shoot_sfx.play()
 	var tempBullet = Bullet.instantiate()
 	tempBullet.pathName = pathName
 	tempBullet.bulletDamage = bulletDamage

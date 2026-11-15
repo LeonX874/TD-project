@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dedc4s5gs6k8v"]
+[gd_scene format=3 uid="uid://dedc4s5gs6k8v"]
 
 [ext_resource type="Texture2D" uid="uid://cvhb2ksvhd55d" path="res://tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_t5g5k"]
 
@@ -374,7 +374,7 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_46r7w")
 
-[node name="TileMap" type="TileMap"]
+[node name="TileMap" type="TileMap" unique_id=121240427]
 tile_set = SubResource("TileSet_f3aka")
-cell_quadrant_size = 64
+rendering_quadrant_size = 64
 format = 2
