@@ -1,13 +1,14 @@
 extends Node2D
 
 @onready var sfx = $Click_sfx
+@onready var settings = $Settings_sfx
 
 func Start() -> void:
 	sfx.play()
 	FadeTransition.change_scene("res://main.tscn")
 
 func Options() -> void:
-	sfx.play()
+	settings.play()
 	FadeTransition.change_scene("")
 
 func Quit() -> void:

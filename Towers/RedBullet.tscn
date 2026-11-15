@@ -260,7 +260,6 @@ wait_time = 3.0
 [node name="Shoot_sfx" type="AudioStreamPlayer" parent="." unique_id=2140602831]
 stream = ExtResource("6_36i80")
 volume_db = -14.313
-pitch_scale = 1.25
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]

@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://66atroba71qc" path="res://Font/Daydream DEMO.otf" id="7_cqjrg"]
 [ext_resource type="AudioStream" uid="uid://brbi2s3ye5bdj" path="res://Audio/Background Audio/MenuSong.mp3" id="8_e2xy7"]
 [ext_resource type="AudioStream" uid="uid://bf4ly13f1devl" path="res://Audio/sfx/mouseclick1.ogg" id="10_afec1"]
+[ext_resource type="AudioStream" uid="uid://cs7s1uxdq8l24" path="res://Audio/sfx/switch5.ogg" id="11_afec1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vivr"]
 atlas = ExtResource("2_cqjrg")
@@ -126,6 +127,10 @@ autoplay = true
 [node name="Click_sfx" type="AudioStreamPlayer" parent="." unique_id=950596544]
 stream = ExtResource("10_afec1")
 volume_db = -6.0
+
+[node name="Settings_sfx" type="AudioStreamPlayer" parent="." unique_id=1379186789]
+stream = ExtResource("11_afec1")
+volume_db = -10.0
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="Start"]
 [connection signal="pressed" from="Button Manager/Start" to="Button Manager/Start" method="_on_pressed"]
