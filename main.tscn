@@ -10,13 +10,13 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print(\"Changing to gameover\")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Game.Health <= 0:
-		get_tree().change_scene_to_file(\"res://game_ot.tscn\")
+		FadeTransition.change_scene(\"res://game_ot.tscn\")
 "
 
 [sub_resource type="GDScript" id="GDScript_bahdm"]
